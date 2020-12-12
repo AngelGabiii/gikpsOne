@@ -1,0 +1,33 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 18, 2020, 9:52:13 AM
+    Author     : angelis
+*/
+
+
+#myFeaturedService{
+    text-align: center; 
+    font-size: 25px !important;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    color: #bd2130 !important;
+    font-stretch: expanded;
+}
+
+#myAboutUs{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#myOurSkills{
+    padding-top: 3%;
+}
+
+#myGikpsLogoTwo{
+    height:50%;
+    width: 50%;
+}
