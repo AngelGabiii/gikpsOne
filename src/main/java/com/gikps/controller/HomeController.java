@@ -23,7 +23,7 @@ public class HomeController {
     
     @GetMapping("/portfolio")
     public String toPortfolio(){
-        return "porfolio-details";
+        return "portfolio-details";
     }
     
     @GetMapping("/innerpage")
