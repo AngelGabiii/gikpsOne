@@ -20,11 +20,12 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * @author angelis
  */
 @RestController
-@RequestMapping("api")
+@RequestMapping("/api")
 public class HomeRestController {
     
-    @Autowired MessageRepository messageRepository;
+@Autowired MessageRepository messageRepository;
 
+//@CrossOrigin
 @PostMapping("/sendMessage")
 public Message sendAMessage(@RequestBody Message message){
     return messageRepository.save(message);
