@@ -149,20 +149,20 @@ function clearMessageFields() {
 //==Custom validation ==
 function validatingAllFields() {
     if (nameValue.length <= 3 ||
-                emailValue.length <= 3 ||
-                subjectValue.length <= 3 ||
-                messageValue.length <= 3) {
+            emailValue.length <= 3 ||
+            subjectValue.length <= 3 ||
+            messageValue.length <= 3) {
 
-            $('#nameCheck').show();
-            $('#emailCheck').show();
-            $('#subjectCheck').show();
-            $('#messageCheck').show();
+        $('#nameCheck').show();
+        $('#emailCheck').show();
+        $('#subjectCheck').show();
+        $('#messageCheck').show();
 
-            return false;
-        } else {
-            preventShowingDefaultValidationValues();
-            console.log("the length of nameValue is" + nameValue.length);
-        }
+        return false;
+    } else {
+        preventShowingDefaultValidationValues();
+        console.log("the length of nameValue is" + nameValue.length);
+    }
 }
 
 //To post a message
@@ -184,19 +184,22 @@ function postMessage() {
         var subjectValue = $('#subject').val();
         var messageValue = $('#message').val();
 
-        if (nameValue.length <= 3 ){
+        if (nameValue.length <= 3) {
             $('#nameCheck').show();
             return false;
-        } if(emailValue.length <= 3 ){
+        }
+        if (emailValue.length <= 3) {
             $('#emailCheck').show();
             return false;
-        }if(subjectValue.length <= 3 ){
+        }
+        if (subjectValue.length <= 3) {
             $('#subjectCheck').show();
             return false;
-        } if(messageValue.length <= 3 ){
+        }
+        if (messageValue.length <= 3) {
             $('#messageCheck').show();
             return false;
-        }else{
+        } else {
             preventShowingDefaultValidationValues();
             console.log("the length of nameValue is" + nameValue.length);
         }
@@ -224,6 +227,33 @@ function postMessage() {
 
 }
 
+function subscribe() {
+    $('#subcribeEmailBtn').on('click', function () {
+        var jsonVar = {
+            email: $('#subEmailInput').val()
+        };
+
+        $.ajax({
+            type: "POST",
+            url: window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + "/api/subscribe",
+            data: JSON.stringify(jsonVar),
+            contentType: "application/json",
+            success: function (data) {
+                console.log("The subcription was successfull");
+                console.log(data);
+                customizedAlert("You have subcribed sucessfully", true);
+                $('#subEmailInput').val("");
+            },
+            error: function (error) {
+                console.log("Sorry there was an error subscribing to this website");
+                customizedAlert("Your subscription was not sucessfully sent", true);
+            }
+        });
+
+    });
+}
+
+
 function preventShowingDefaultValidationValues() {
     $('#nameCheck').hide();
     $('#emailCheck').hide();
@@ -241,6 +271,7 @@ function preventShowingDefaultValidationValues() {
 
 $(document).ready(function () {
     //alert("Hello, we are working");
-    preventShowingDefaultValidationValues(); 
+    preventShowingDefaultValidationValues();
     postMessage();
+    subscribe();
 });
