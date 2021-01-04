@@ -139,6 +139,22 @@ function customizedAlert(yourInfo, flag) {
     }, 5000);
 }
 
+function customizedAlertTwo(yourInfo, flag) {
+    if (flag) {
+        $('.alertTwo').removeClass("alert-danger").addClass("alert-success");
+    } else {
+        $('.alertTwo').removeClass("alert-success").addClass("alert-danger");
+    }
+
+    $('.alertTwo').fadeIn(400);
+    $('.alertTwo').css("display", "block");
+    $('.alertTwo').text(yourInfo);
+    setTimeout(function () {
+        $('.alertTwo').fadeOut();
+    }, 5000);
+}
+
+
 function clearMessageFields() {
     $('#name').val("");
     $('#email').val("");
@@ -241,12 +257,12 @@ function subscribe() {
             success: function (data) {
                 console.log("The subcription was successfull");
                 console.log(data);
-                customizedAlert("You have subcribed sucessfully", true);
+                customizedAlertTwo("You have subcribed sucessfully", true);
                 $('#subEmailInput').val("");
             },
             error: function (error) {
                 console.log("Sorry there was an error subscribing to this website");
-                customizedAlert("Your subscription was not sucessfully sent", true);
+                customizedAlertTwo("Your subscription was not sucessfully sent", true);
             }
         });
 
