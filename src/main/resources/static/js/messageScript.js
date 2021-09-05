@@ -245,7 +245,15 @@ function postMessage() {
 
 function subscribe() {
     $('#subcribeEmailBtn').on('click', function () {
-        var jsonVar = {
+        event.preventDefault(); // Prevents your webpage from reloading when the html emelent is surrounded by a form 
+//        Perform email verification
+//    filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+//    email = $('#subEmailInput').val();
+    
+//    if(filter.test(email.val())){
+        console.log("The filter matches");
+        
+         var jsonVar = {
             email: $('#subEmailInput').val()
         };
 
@@ -265,9 +273,26 @@ function subscribe() {
                 customizedAlertTwo("Your subscription was not sucessfully sent", true);
             }
         });
+        
+//    }else{
+//        alert("Please enter a valide email");
+//        return false;
+//    }
 
     });
 }
+
+function subscribeUsingEnterKey(){
+   $('#subEmailInput').keydown( function(event){
+        if (event.which===13){
+            subscribe();
+        }else{
+            console.log("nothing happend");
+        }
+    }); 
+}
+
+
 
 
 function preventShowingDefaultValidationValues() {
@@ -289,5 +314,6 @@ $(document).ready(function () {
     //alert("Hello, we are working");
     preventShowingDefaultValidationValues();
     postMessage();
-    subscribe();
+    subscribeUsingEnterKey();
+//    subscribe();
 });

@@ -26,8 +26,28 @@ public class HomeController {
         return "portfolio-details";
     }
     
-    @GetMapping("/innerpage")
+    @GetMapping("/comingSoon")
     public String toInnerPage(){
-        return "inner-page";
+        return "coming-soon";
+    }
+    
+    @GetMapping("/aboutUs")
+    public String toAboutUs (){
+        return "index";
+    }
+    
+    @GetMapping("/services")
+    public String toServices(){
+        return"index";
+    }
+    
+    @GetMapping("/team")
+    public String toTeam(){
+        return "index";
+    }
+    
+    @GetMapping("/contactUs")
+    public String toContactUs(){
+        return "index";
     }
 }

@@ -7,10 +7,10 @@
 </head>
 
 <body>
+<script th:src="@{js/messageScript.js}"></script>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top" th:replace="common/layout :: allNav">
-    
   </header><!-- End Header -->
 
   <main id="main">
@@ -23,7 +23,7 @@
           <h2>Portfolio Details</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
             <li>Portfolio Details</li>
           </ol>
         </div>
@@ -58,7 +58,7 @@
         <div class="portfolio-description">
           <h2>Portfolio Detail One</h2>
           <p>
-            The portfolio details goes here
+            Portfolio One
           </p>
         </div>
       </div>
@@ -67,13 +67,16 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
+  <div class="alertTwo container col-sm-6" role="alert" style="padding: 20px; text-align: center;"> </div>
   <footer id="footer" th:replace="common/layout :: allFooter"  >
-    
-  </footer><!-- End Footer -->
+  </footer>
+  <!--End Footer--> 
 
   <div th:replace="common/layout :: buttomScript">
-      
   </div>
+ 
+
+ 
 
 </body>
 
