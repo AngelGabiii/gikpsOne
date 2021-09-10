@@ -246,12 +246,12 @@ function postMessage() {
 function subscribe() {
     $('#subcribeEmailBtn').on('click', function () {
         event.preventDefault(); // Prevents your webpage from reloading when the html emelent is surrounded by a form 
-//        Perform email verification
+   //     Perform email verification
 //    filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 //    email = $('#subEmailInput').val();
-    
+//    
 //    if(filter.test(email.val())){
-        console.log("The filter matches");
+//        console.log("The filter matches");
         
          var jsonVar = {
             email: $('#subEmailInput').val()
@@ -301,9 +301,6 @@ function preventShowingDefaultValidationValues() {
     $('#subjectCheck').hide();
     $('#messageCheck').hide();
 }
-
-
-
 
 
 
